@@ -14,10 +14,10 @@ void setup(){
 void loop(){
 val = digitalRead(button); //read input value from button, set to val
 
-// check if there was a transition
-if ((val == HIGH) && (old_val == LOW)){
-  state = 1 - state;
-  delay(100); // 100ms delay to ignore pushbutton noise
+// check if the button was tapped before changing state
+if ((val == HIGH) && (old_val == LOW)){ // if the button is pressed and was previously not
+  state = 1 - state; // change state
+  delay(100); // 100ms delay to ignore push button noise
 }
 
 old_val = val; // val is now old, let's store it
