@@ -5,8 +5,9 @@ Servo myservo1;
 Servo myservo2;
 Servo myservo3;
 Servo myservo4;
-int pos = 0; 
-int del = 1111;
+int pos = 0; //used for sweep
+int del = 80; //delay time
+int del2 = 800; //second delay (between functions)
 int down = 0;
 int up = 90;
 int downL = 180;
@@ -23,34 +24,41 @@ void setup()
 
 void loop() //run through all the functions
 {
-  alpha();
-  delay(del);
-  beta();
-  delay(del);
-  delta();
-  delay(del);
-  gamma();
-  delay(del);
-  omega();
-  delay(del);
   zero();
-  delay(del);
-  x1();
-  delay(del);
-  x2();
-  delay(del);
-  left();
-  delay(del);
-  right();
-  delay(del);
-  top();
-  delay(del);
+  delay(del2);
+  omega();
+  delay(del2);
   bottom();
-  delay(del);  
+  delay(del2);
+  top();
+  delay(del2);
+  alpha();
+  delay(del2);
+  beta();
+  delay(del2);
+  delta();
+  delay(del2);
+  gamma();
+  delay(del2);
+  omega();
+  delay(del2);
+  zero();
+  delay(del2);
+  x1();
+  delay(del2);
+  x2();
+  delay(del2);
+  left();
+  delay(del2);
+  right();
+  delay(del2);
+  top();
+  delay(del2);
+  bottom();
+  delay(del2);  
 }
 void zero() //drop all servos
 {
-  //Zero out
   myservo1.write(down);
   delay(del);
   myservo2.write(down);
@@ -126,18 +134,18 @@ void x1()
   delay(del);
   myservo2.write(down);
   delay(del);
-  myservo3.write(up);
+  myservo3.write(downL);
   delay(del);
-  myservo4.write(downL);
+  myservo4.write(up);
   delay(del);
 }
 void x2()
 {
-  myservo1.write(down);
+  myservo1.write(up);
   delay(del);
-  myservo2.write(up);
+  myservo2.write(down);
   delay(del);
-  myservo3.write(down);
+  myservo3.write(downL);
   delay(del);
   myservo4.write(up);
   delay(del);
